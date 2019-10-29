@@ -1,6 +1,7 @@
 #Con7ext
 import requests as tod
 import re
+from httplib import IncompleteRead
 from subprocess import check_output
 from termcolor import colored
 from requests import HTTPError, Timeout, ConnectionError, TooManyRedirects
@@ -108,7 +109,7 @@ def exploit(site):
         print("["+ colored("PHPUNIT", "red") +"]")
     else:
       print("["+ colored("PHPUNIT", "red") +"]")
-  except (HTTPError, Timeout, ConnectionError, TooManyRedirects):
+  except (HTTPError, Timeout, ConnectionError, TooManyRedirects, IncompleteRead):
     print("[?] "+ site + " -> " + colored("Unknow Error", "yellow"))
 
 dnn = Pool(50)
