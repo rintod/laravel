@@ -109,7 +109,7 @@ def exploit(site):
         print("["+ colored("PHPUNIT", "red") +"]")
     else:
       print("["+ colored("PHPUNIT", "red") +"]")
-  except (HTTPError, Timeout, ConnectionError, TooManyRedirects, IncompleteRead):
+  except (HTTPError, Timeout, ConnectionError, TooManyRedirects, IncompleteRead, Exception):
     print("[?] "+ site + " -> " + colored("Unknow Error", "yellow"))
 
 dnn = Pool(50)
